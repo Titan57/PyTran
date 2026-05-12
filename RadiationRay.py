@@ -1,3 +1,4 @@
+import csv
 
 def biggest( self ):
 	pass
@@ -6,13 +7,27 @@ def middle( self ):
 def smallest( self ):
 	pass
 
+def load_lines_from_csv(filename): #imports and decodes csv file
+    lines = {}
+
+    with open(filename, newline='') as f:
+        reader = csv.DictReader(f)
+
+        for row in reader:
+            n = int(row['n'])
+
+            lines[n] = (
+                float(row['val1']),
+                float(row['val2'])
+            )
+
+    return lines
 
 class Ray:
 	
 	def __init__( self, frequency ):
-		import Atmospherics
 		self.frequency = frequency	
-		self.lines = Atmospherics.lines
+		self.lines = load_lines_from_csv("Atmospherics.csv")
 		import math
 		self.math = math
 		"""I import math and assign it to an attribute of Ray so that I can use it's

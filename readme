@@ -7,6 +7,12 @@ requirements:
 	sqlite
 	firefox (for plotting results)
 
+***
+Below is an example for the PyTran project with the PyTran.py program that is not part of the current repo. The main python program is currently ray_test_coefficients.py. I'm looking to update the code repo to align with standard repository practices. I'll be removing the empty python files and adding a file to store the data for the program to call upon. I've also went ahead and fixed any typos in the explanation below. Contact Todd Lines with BYU-Idaho for more details on the project.
+
+-Tyler Jensen (Titan57) tylerhjensen@gmail.com  05/12/26
+***
+
 example:
 $ python3 PyTran.py 
 Welcome to PyTran. Copyright 2011 Joshua Barney
@@ -39,13 +45,17 @@ Results stored
 >>>plot results
 >>>exit
 
-the database currently holds about 1700 TIGR radiosonds with name TIGRXXXX where XXXX can be 0001-1700ish.
 
-The user interface is pretty brittle right now. It is mostly a proof of concept.
+
+-The database currently holds about 1700 TIGR radiosonds with name TIGRXXXX where XXXX can be 0001-1700ish.
+
+-The user interface is pretty brittle right now. It is mostly a proof of concept.
 
 Tests:
-there is a file to test the results of PyTran against results obtained from RADTRAN on various frequencies from 1.4 GHZ to 400 GHZ.
+
+-There is a file to test the results of PyTran against results obtained from RADTRAN on various frequencies from 1.4 GHZ to 400 GHZ.
+
 To run:
 $ python3 ray_test_coefficients.py
 
-it should print a bunch of numbers and then give a time for the test run followed by 'OK' if the test was successful.
+-It should print a bunch of numbers and then give a time for the test run followed by 'OK' if the test was successful.

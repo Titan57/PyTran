@@ -1,3 +1,4 @@
+import pandas as pd
 
 """This file holds the globaly needed values for computing attenuation.
 The dictionary below 'lines' comes from 'Table 1' in the artical by Meeks and Lilley:
@@ -26,3 +27,15 @@ lines={ 1 : ( 56.2648, 118.7505 ) ,
 		41 : ( 70.0000, 49.4648 ) ,
 		43 : ( 70.5249, 48.9582 ) , # This is the same as the meeks and lilley artical, however RADTRAN gives 70.5244, not 70.5249
 		45 : ( 71.0497, 48.4530 ) }
+
+
+# Creates csv file from lines dictionary using pandas library
+def create_csv(filename):
+    rows = [{"n": n, "val1": values[0], "val2": values[1]} for n, values in lines.items()]
+
+    df = pd.DataFrame(rows)
+    df.to_csv(filename, index=False)
+
+if __name__ == "__main__":
+    create_csv("Atmospherics.csv")
+
